@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Android Dasar</string>
+    <string name="app_name">Mobile List App</string>
+    <string name="menu_title">Mobile List App</string>
+    <string name="menu_subtitle">Praktikum ListView &amp; RecyclerView Android Kotlin</string>
+    <string name="title_list_view">Praktik 1 — ListView</string>
+    <string name="desc_list_view">Implementasi ListView dan ArrayAdapter untuk menampilkan daftar mata kuliah dengan event klik Toast.</string>
+    <string name="title_recycler_view">Praktik 2 &amp; 3 — RecyclerView</string>
+    <string name="desc_recycler_view">Implementasi RecyclerView dengan Adapter, ViewHolder, LinearLayoutManager, CardView, Avatar, dan fitur pencarian kontak.</string>
+    <string name="section_previous">Latihan Sebelumnya</string>
+    <string name="desc_previous">Praktikum Penyimpanan Data (SharedPreferences)</string>
 </resources>

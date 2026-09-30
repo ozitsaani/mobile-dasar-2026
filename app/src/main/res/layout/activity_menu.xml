@@ -1,101 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F1F5F9"
-    android:gravity="center_horizontal"
-    android:padding="24dp"
+    android:background="@color/background_light"
+    android:fillViewport="true"
     tools:context=".MenuActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Praktikum Penyimpanan Data"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#0F172A"
-        android:layout_marginTop="32dp"
-        android:gravity="center" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SharedPreferences (File XML Storage)"
-        android:textSize="14sp"
-        android:textColor="#64748B"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="36dp"
-        android:gravity="center" />
-
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="3dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:strokeWidth="1dp"
-        app:strokeColor="#E2E8F0"
-        android:layout_marginBottom="20dp">
+        android:orientation="vertical"
+        android:padding="20dp">
 
+        <!-- App Header Banner -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Menu Pilihan Praktikum"
-                android:textSize="16sp"
+                android:text="Mobile List App"
+                android:textSize="26sp"
                 android:textStyle="bold"
-                android:textColor="#1E293B"
-                android:layout_marginBottom="16dp" />
-
-            <Button
-                android:id="@+id/btnMenu1"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="1. Simpan 1 Data"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:backgroundTint="#2563EB"
-                android:textColor="#FFFFFF"
-                app:cornerRadius="10dp"
-                android:layout_marginBottom="8dp" />
+                android:textColor="@color/text_title" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Latihan dasar menyimpan 1 key-value (nama) ke SharedPreferences."
-                android:textSize="12sp"
-                android:textColor="#64748B"
-                android:layout_marginBottom="20dp" />
-
-            <Button
-                android:id="@+id/btnMenu2"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="2. Simpan Banyak Data"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:backgroundTint="#0D9488"
-                android:textColor="#FFFFFF"
-                app:cornerRadius="10dp"
-                android:layout_marginBottom="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Latihan lanjutan menyimpan banyak data (JSON Array) dengan RecyclerView &amp; sinkronisasi real-time."
-                android:textSize="12sp"
-                android:textColor="#64748B" />
-
+                android:text="Praktikum Pengelolaan Daftar Data Android (Kotlin &amp; XML)"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
 
-</LinearLayout>
+        <!-- Card Praktik 1: ListView -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/surface_card"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/border_light"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <FrameLayout
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:backgroundTint="#EFF6FF">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Icon School"
+                            android:src="@drawable/ic_school"
+                            app:tint="@color/primary_blue" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Praktik 1 — ListView"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_title" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Daftar Mata Kuliah"
+                            android:textSize="12sp"
+                            android:textColor="@color/primary_blue"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Menggunakan ListView dan ArrayAdapter untuk menampilkan daftar data mata kuliah dengan event klik item dan Toast notifikasi."
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="16dp"
+                    android:lineSpacingExtra="2dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMenuListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Buka Praktik ListView"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/primary_blue"
+                    android:textColor="@color/white"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card Praktik 2 & 3: RecyclerView -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="3dp"
+            app:cardBackgroundColor="@color/surface_card"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/border_light"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <FrameLayout
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_avatar_circle"
+                        android:backgroundTint="#F0FDF4">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Icon Contacts"
+                            android:src="@drawable/ic_contacts"
+                            app:tint="@color/primary_teal" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Praktik 2 &amp; 3 — RecyclerView"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_title" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Daftar Kontak + Search"
+                            android:textSize="12sp"
+                            android:textColor="@color/primary_teal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Menggunakan RecyclerView dengan model data Kontak, Adapter kustom, ViewHolder, LinearLayoutManager, CardView profil, serta pencarian kontak."
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="16dp"
+                    android:lineSpacingExtra="2dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMenuRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="Buka Praktik RecyclerView"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/primary_teal"
+                    android:textColor="@color/white"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Divider dan Latihan Sebelumnya -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latihan Sebelumnya (Penyimpanan Data)"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMenuOld1"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="Simpan 1 Data"
+                android:textSize="12sp"
+                app:cornerRadius="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMenuOld2"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="Simpan Banyak Data"
+                android:textSize="12sp"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
